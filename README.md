@@ -8,35 +8,11 @@ Usage
 npm install href-replace
 ```
 
-Example
--------
+API Documentation
+-----------------
 
-```javascript
-// Replace all URLs with Bit.ly shortened URLs.
-var Bitly = require('bitly')
-var hrefReplace = require('./href-replace')
+### hrefReplace(html, replacer[, options], done)
 
-var bitly = new Bitly('YOUR_USERNAME', 'YOUR_API_KEY')
-var html = '\
-<ul>\
-  <li><a href="http://google.com">Google</a></li>\
-  <li><a href="https://github.com">Github</a></li>\
-</ul>'
-
-hrefReplace(html, function(href, callback) {
-    bitly.shorten(href, function(err, response) {
-        //console.log(response)
-        if (err) callback(err)
-        else callback(null, response.data.url)
-    });
-}, function(err, replaced) {
-    if (err) console.error(err)
-    else console.log(replaced)
-});
-```
-
-Arguments
----------
 - `html` : A String containing the original HTML to
     transform
 - `replacer(href, callback)`: A Function to do the transforming. The function
@@ -61,6 +37,37 @@ Arguments
        function at the time it occurred, or `null`
        if no error occured.
     - `html`: The new HTML with all the `href`s replaced.
+
+Example
+-------
+```javascript
+// Replace all URLs with Bit.ly shortened URLs.
+var Bitly = require('bitly')
+var hrefReplace = require('href-replace')
+
+var bitly = new Bitly('YOUR_USERNAME', 'YOUR_API_KEY')
+var html = '\
+<ul>\
+  <li><a href="http://google.com">Google</a></li>\
+  <li><a href="https://github.com">Github</a></li>\
+</ul>'
+
+hrefReplace(html, function(href, callback) {
+    bitly.shorten(href, function(err, response) {
+        //console.log(response)
+        if (err) callback(err)
+        else callback(null, response.data.url)
+    });
+}, function(err, replaced) {
+    if (err) console.error(err)
+    else console.log(replaced)
+});
+```
+
+See [examples] directory for more complete examples.
+
+[examples]:(https://github.com/barberboy/href-replace/tree/master/examples)
+
 
 License
 -------
