@@ -66,7 +66,7 @@ hrefReplace(html, function(href, callback) {
 
 See [examples] directory for more complete examples.
 
-[examples]:(https://github.com/barberboy/href-replace/tree/master/examples)
+[examples]: https://github.com/barberboy/href-replace/tree/master/examples
 
 
 License
