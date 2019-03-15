@@ -1,15 +1,15 @@
 {
   "name": "href-replace",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "For each `a` element in a string of HTML, replace the `href` attribute with a new value provided by the `replacer` function.",
   "main": "href-replace.js",
   "dependencies": {
-    "async": "^0.9.0",
-    "cheerio": "^0.18.0",
-    "merge": "^1.2.0"
+    "async": "^2.6.2",
+    "cheerio": "^1.0.0-rc.2",
+    "merge": "^1.2.1"
   },
   "devDependencies": {
-    "nodeunit": "^0.9.0"
+    "nodeunit": "^0.11.3"
   },
   "scripts": {
     "test": "nodeunit test"
